@@ -54,7 +54,7 @@ require('spec_helper')
    it("returns an array of clients for the stylist") do
     test_stylist = Stylist.new({:description => "Jasmine", :id => nil})
     test_stylist.save()
-    test_client = Client.new({:description => "Martina - Hair dye", :stylist_id => test_stylist.id(), :appointment_date => "2015-02-10 14:00:00"})
+    test_client = Client.new({:description => "Mary - Hair dye", :stylist_id => test_stylist.id(), :appointment_date => "2015-02-10 14:00:00"})
     test_client.save()
     test_client2 = Client.new({:description => "John - Hair cut", :stylist_id => test_stylist.id(), :appointment_date => "2015-05-10 16:00:00"})
     test_client2.save()
