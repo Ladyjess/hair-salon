@@ -49,7 +49,7 @@ require('spec_helper')
      expect(stylist1).to(eq(stylist2))
     end
   end
-  
+
 
   describe("#update") do
     it("lets you update the list of stylists in the database") do
@@ -57,6 +57,20 @@ require('spec_helper')
       stylist.save()
       stylist.update({:description => "Katherine"})
       expect(stylist.description()).to(eq("Katherine"))
+    end
+  end
+
+  describe("#delete") do
+    it("lets you delete a stylist from the database") do
+      stylist = Stylist.new({:description => "Kathy", :id => nil})
+      stylist.save()
+      client = Client.new({:description => "Mary - Hair color", :stylist_id => stylist_id, :appointment_date => appointment_date})
+      client.save()
+      stylist2 = Stylist.new({:description => "Princess", :id => nil})
+      stylist2.save()
+      stylist.delete()
+      expect(Stylist.all()).to(eq([stylist2]))
+      expect(Client.all()).to(eq([]))
     end
   end
 

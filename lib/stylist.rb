@@ -37,6 +37,16 @@ class Stylist
   self.description().==(another_stylist.description()).&(self.id().==(another_stylist.id()))
   end
 
+  define_method(:update) do |attributes|
+    @description = attributes.fetch(:description)
+    @id = self.id()
+    DB.exec("UPDATE stylists SET description = '#{@description}' WHERE id = #{@id};")
+  end
+
+ define_method(:delete) do
+    DB.exec("DELETE FROM stylists WHERE id = #{self.id()};")
+    DB.exec("DELETE FROM clients WHERE stylist_id = #{self.id()};")
+  end
 
  define_method(:clients) do
   clients_stylists = []
@@ -49,10 +59,4 @@ class Stylist
       end
     clients_stylists
   end
-
-  define_method(:update) do |attributes|
-    @description = attributes.fetch(:description)
-    @id = self.id()
-    DB.exec("UPDATE stylists SET description = '#{@description}' WHERE id = #{@id};")
-  end
-end
+end  
