@@ -35,9 +35,9 @@ After you have that installed, run psql in the terminal.
 This app is written in Ruby.
 
 Gems I used were Sinatra, Sinatra-contrib, and Pg.
-You can ignore Pry and Rack. I use the older version of Rack to get to Sinatra's debugging page in browser. This does not work for the newest version.
+You can ignore Pry and Rack. I use the older version of Rack to get to Sinatra's debugging page in browser. This browser debug page does not work for the newest version of rack. In general, you would check your terminal.
 
-If you want to use old Rack, you have to run 'bundle exec ruby app.rb' in terminal once. and from then forward you can run 'ruby app.rb'
+If you want to use old Rack, you have to run 'bundle exec ruby app.rb' in terminal once. From then forward you can run 'ruby app.rb'
 
 
 
