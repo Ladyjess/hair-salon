@@ -49,6 +49,16 @@ require('spec_helper')
      expect(stylist1).to(eq(stylist2))
     end
   end
+  
+
+  describe("#update") do
+    it("lets you update the list of stylists in the database") do
+      stylist = Stylist.new({:description => "Mandy", :id => nil})
+      stylist.save()
+      stylist.update({:description => "Katherine"})
+      expect(stylist.description()).to(eq("Katherine"))
+    end
+  end
 
  describe("#clients") do
    it("returns an array of clients for the stylist") do

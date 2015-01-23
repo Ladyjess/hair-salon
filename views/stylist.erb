@@ -14,6 +14,7 @@
 
 </form>
 
+
 <% if @stylist.clients().any?() %>
 <h3>Here are all the clients for this stylist:</h3>
 <ul>
@@ -25,4 +26,5 @@
 <p>There are no clients yet!</p>
 <% end %>
 
-<a href="/">Return to Main Page</a>
+<p><a href="/stylists/<%= @stylist.id() %>/edit">Edit <%= @stylist.description() %> stylist</a></p>
+<p><a href="/">Return to Main Page</a></p>

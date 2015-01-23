@@ -49,4 +49,10 @@ class Stylist
       end
     clients_stylists
   end
+
+  define_method(:update) do |attributes|
+    @description = attributes.fetch(:description)
+    @id = self.id()
+    DB.exec("UPDATE stylists SET description = '#{@description}' WHERE id = #{@id};")
+  end
 end
