@@ -1,19 +1,26 @@
 <h1> Hair Salon Organizer </h1>
 
+
+<div class="jumbotron">
 <form action="/stylists" method="post">
-<label for="description"> List your stylists:</label>
+<label for="description"> List your stylist:</label>
 <input id="description" name="description" type="text">
 <button type="submit" class="btn btn-sm btn-primary">Add stylist</button>
 </form>
 
+</div>
 
 <% if @stylists.any?() %>
+<div>
 <p>Click on a stylist to see their clients:</p>
+</div>
 <ul>
 <% @stylists.each do |stylist| %>
 <li><a href="/stylists/<%= stylist.id() %>"><%= stylist.description() %></a></li>
 <% end %>
 </ul>
 <% else %>
+<div>
 <p>There are no stylists yet!</p>
+</div>
 <% end %>
