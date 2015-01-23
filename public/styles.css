@@ -1,0 +1,27 @@
+body {
+background-color:#cdd7f7;
+}
+
+.spacing {
+padding: 15px;
+}
+
+.jumbotron {
+margin: auto;
+width: 500px;
+text-align: center;
+color:#c12a0f;
+}
+
+form {
+width: 360px;
+text-align: right;
+margin: auto;
+font-size: 25px;
+}
+
+
+.btn {
+margin-top: 10px;
+margin-right: 4px;
+}
