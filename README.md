@@ -22,7 +22,7 @@ After you have that installed, run psql in the terminal.
 
 2. CREATE TABLE stylists (id serial PRIMARY KEY, description varchar)
 
-3. CREATE TABLE clients (id serial PRIMARY KEY, description varchar, stylist id int, appointment_date timestamp)
+3. CREATE TABLE clients (id serial PRIMARY KEY, description varchar, stylist id int, appointment_date date)
 
 4. CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon
 
